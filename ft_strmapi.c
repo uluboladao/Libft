@@ -6,7 +6,7 @@
 /*   By: luciano <luciano@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 15:03:26 by llima-da          #+#    #+#             */
-/*   Updated: 2022/05/14 01:36:41 by luciano          ###   ########.fr       */
+/*   Updated: 2022/05/30 13:00:21 by luciano          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,10 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	unsigned int	i;
 	char			*str;
+	size_t			len;
 
-	if (!s)
-		return (ft_strdup(""));
-	else if (!f)
-		return (ft_strdup(s));
-	str = ft_strdup(s);
+	len = ft_strlen(s) + 1;
+	str = malloc(len);
 	if (!str)
 		return (NULL);
 	i = 0;
@@ -30,5 +28,6 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 		str[i] = (*f)(i, s[i]);
 		i++;
 	}
+	str[i] = '\0';
 	return (str);
 }

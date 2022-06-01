@@ -6,7 +6,7 @@
 /*   By: luciano <luciano@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 15:03:26 by llima-da          #+#    #+#             */
-/*   Updated: 2022/05/17 20:36:03 by luciano          ###   ########.fr       */
+/*   Updated: 2022/05/30 14:11:14 by luciano          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	unsigned int		end;
 
 	i = 0;
-	ptr = malloc(sizeof(s) * ft_strlen(s));
+	ptr = malloc(len + 1);
 	if (!ptr)
 		return (NULL);
 	end = start + len;
@@ -29,5 +29,6 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 			i++;
 			start++;
 	}
+	ptr[i] = '\0';
 	return (ptr);
 }

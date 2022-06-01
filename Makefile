@@ -43,3 +43,6 @@ re:		fclean all
 so:
 	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRCS)
 	gcc -nostartfiles -shared -o libft.so $(OBJ)
+
+teste:
+	$(CC) $(CFLAGS) test.c $(SRCS)
